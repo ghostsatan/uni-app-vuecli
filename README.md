@@ -1,7 +1,7 @@
 ## **简述一下**这个模板给VSCode开发` uni-app`带来的体验
 
 已经预置了`sass`、`sass-loader`、`uview-ui`，并做了**easycom**相关配置。
-
+引入了全局的axios  request
 
 
 - 增强`pages.json`和`manifest.json`开发体验（语法提示、颜色块、写注释）
@@ -9,9 +9,6 @@
 - 完善的`API`，组件，uni.scss语法提示
 - 条件编译注释高亮
 
-
-
-> **详细的教程请看**：[这可能是最好、最详细的VSCod开发uni-app教程吧](https://juejin.cn/post/7090532271257714695)。
 
 ## 项目配置
 
