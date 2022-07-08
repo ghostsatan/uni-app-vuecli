@@ -7,7 +7,7 @@
 
 <script>
 import Tabbar from './Tabbar'
-import request from '@/common/request.js'
+// import request from '@/common/request.js'
 export default {
   components: {
     Tabbar
@@ -27,7 +27,10 @@ export default {
       //   method: 'get'
       // },
       this.$axios.get('json/newsList.json').then(res => {
-        console.log(res)
+        console.log(2222,res)
+        if (res.status === 200) {
+          uni.showToast({ title: '接口请求成功！', icon: 'none' })
+        }
       })
       // this.$axios({
       //   methods: 'get',

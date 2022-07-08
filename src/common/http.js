@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-var baseUrl = 'https://www.zhoukaiwen.com/',//不是h5的地址
+var baseUrl = 'https://www.zhoukaiwen.com/'//不是h5的地址
   baseUrl = '';//h5的地址
 // create an axios instance
 const service = axios.create({
@@ -27,9 +27,8 @@ service.interceptors.request.use(config => {
 
 //配置成功后的拦截器
 service.interceptors.response.use(res => {
-  console.log(res);
-  if (res.data.status == 200) {
-    return res.data
+  if (res.status == 200) {
+    return res
   } else {
     return Promise.reject(res.data.msg);
   }

@@ -1,6 +1,6 @@
 
 var baseUrl = 'https://www.zhoukaiwen.com/',//不是h5的地址
-  baseUrl = '';//h5的地址
+  // baseUrl = '';//h5的地址
 
 // 不带token请求
 const httpRequest = (opts, data) => {

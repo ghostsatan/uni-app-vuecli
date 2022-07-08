@@ -2,61 +2,64 @@
 <template>
   <view style="height:100vh;background: #fff;">
     <view class="img-a">
-      <view class="t-b"
-            @click="goLogin3()">
+      <view class="t-b" @click="goLogin3()">
         您好，
         <br />
         欢迎使用
       </view>
     </view>
-    <view class="login-view"
-          style="">
+    <view class="login-view" style="">
       <view class="t-login">
         <form class="cl">
           <view class="t-a">
             <text class="txt">手机号</text>
-            <input type="number"
-                   name="phone"
-                   placeholder="请输入您的手机号"
-                   maxlength="11"
-                   v-model="phone" />
+            <input type="number" name="phone" placeholder="请输入您的手机号" maxlength="11" v-model="phone" />
           </view>
           <view class="t-a">
             <text class="txt">密码</text>
-            <input type="password"
-                   name="code"
-                   maxlength="18"
-                   placeholder="请输入您的密码"
-                   v-model="pwd" />
+            <input type="password" name="code" maxlength="18" placeholder="请输入您的密码" v-model="pwd" />
           </view>
+
+          <slide></slide>
+
           <button @tap="login()">登 录</button>
-          <view class="reg"
-                @tap="reg()">注 册</view>
+          <view class="reg" @tap="reg()">注 册</view>
         </form>
         <view class="t-f"><text>—————— 第三方账号登录 ——————</text></view>
         <view class="t-e cl">
-          <view class="t-g"
-                @tap="wxLogin()">
-            <image src="https://zhoukaiwen.com/img/loginImg/wx.png"></image>
+          <view class="t-g" @tap="wxLogin()">
+            <u-icon name="weixin-fill"></u-icon>
           </view>
-          <view class="t-g"
-                @tap="zfbLogin()">
-            <image src="https://zhoukaiwen.com/img/loginImg/qq.png"></image>
+          <view class="t-g" @tap="zfbLogin()">
+            <u-icon name="zhifubao-circle-fill"></u-icon>
           </view>
+
         </view>
       </view>
     </view>
   </view>
 </template>
 <script>
+import slide from "../../components/slide/slide"
 export default {
+  components: {
+    slide
+  },
   data() {
     return {
       phone: '', //手机号码
       pwd: '' //密码
     }
   },
-  onLoad() {},
+  onLoad() {
+    // 获取本地应用资源版本号
+    plus.runtime.getProperty(plus.runtime.appid, (info) => {
+      console.log(123, JSON.stringify(info));
+      // this.version = info.version;
+      // this.versionCode = info.versionCode ;
+    })
+
+  },
   methods: {
     // 跳转第二个登陆模版
     goLogin3() {
@@ -105,12 +108,14 @@ export default {
   font-weight: bold;
   color: #333333;
 }
+
 .img-a {
   width: 100%;
   height: 450rpx;
-  background-image: url(https://zhoukaiwen.com/img/loginImg/head.png);
+  background-color: #2979ff;
   background-size: 100%;
 }
+
 .reg {
   font-size: 28rpx;
   color: #fff;
